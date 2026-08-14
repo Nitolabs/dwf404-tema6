@@ -351,19 +351,3 @@ Al terminar, se cierran el `EntityManager`, el `EntityManagerFactory` y el `Scan
 6. Hibernate traduce esa consulta JPQL a **SQL real** y la ejecuta contra H2 (puedes ver el SQL generado en consola gracias a `show_sql=true`).
 7. Los resultados (objetos `Producto`) se imprimen usando su `toString()`.
 8. El ciclo se repite hasta que el usuario elige `0` y el programa cierra todo correctamente.
-
----
-
-## Conceptos clave para repasar
-
-| Concepto | En una frase |
-|---|---|
-| **Entidad** (`@Entity`) | Una clase Java que representa una tabla de la BD. |
-| **JPQL** | Un lenguaje tipo SQL que consulta sobre entidades/campos Java, no sobre tablas/columnas. |
-| **`EntityManager`** | El objeto que usas para leer y escribir datos vía JPA. |
-| **Transacción** (`begin`/`commit`) | Un bloque de operaciones que se confirman (o deshacen) como una unidad. |
-| **`@OneToMany` / `@ManyToOne`** | Cómo se modela una relación 1-a-muchos entre dos entidades. |
-| **`cascade`** | Qué operaciones (persistir, borrar...) se propagan automáticamente a las entidades relacionadas. |
-| **`FetchType.LAZY` vs `EAGER`** | Si una relación se carga "cuando se necesita" o "siempre de inmediato". |
-| **Parámetro nombrado (`:param`)** | Forma segura de pasar valores a una consulta, evitando inyección SQL. |
-| **`hibernate.hbm2ddl.auto`** | Controla si Hibernate crea, actualiza, valida o ignora el esquema de la BD al arrancar. |
